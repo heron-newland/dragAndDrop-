@@ -54,26 +54,26 @@ iOS11拖拽的使用方法
 	
 	//初始化方法
     public init(delegate: UIDragInteractionDelegate)
--
+
 
     //代理
     weak open var delegate: UIDragInteractionDelegate? { get }
 
--
+
     
     /* 在拖拽开始后是否支持其他手势
      * true: 支持其他手势, 那么其他手势开始后拖拽手势会取消
      * false: 在拖拽开始后不支持其他手势
      */
     open var allowsSimultaneousRecognitionDuringLift: Bool
--
+
     
     /* 是否允许拖动
      * iPad默认开始, iPhone默认关闭
      */
     open var isEnabled: Bool
 
--
+
   
     /* 获取默认是否有效 不同的设备这个值将有所区别,iPad默认开始, iPhone默认关闭
      */
@@ -90,14 +90,13 @@ iOS11拖拽的使用方法
 	     */
 	    public func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem]
 
--
+
     
     /* 这个方法用来自定义拖拽效果的预览视图，系统默认会提供一个预览视图，不实现这个方法即是使用系统默认的
 	  * 如果返回nil，则会去除预览动画.
      */
     optional public func dragInteraction(_ interaction: UIDragInteraction, previewForLifting item: UIDragItem, session: UIDragSession) -> UITargetedDragPreview?
 
--
     
     /* 拖拽动画即将开始
      * 可以通过 animator 改变动画,
